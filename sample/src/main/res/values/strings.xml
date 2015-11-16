@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ColorDialog</string>
+    <string name="operation">Operation</string>
+    <string name="content_text">This is content message.</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="text_iknow">I Know</string>
+</resources>
