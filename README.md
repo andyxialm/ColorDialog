@@ -1,14 +1,53 @@
 #ColorDialog & PromptDialog
+[![](https://jitpack.io/v/andyxialm/ColorDialog.svg)](https://jitpack.io/#andyxialm/ColorDialog)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ColorDialog-brightgreen.svg?style=flat)]()
 
-* 简单封装的对话框控件 ColorDialog & PromptDialog
-* ColorDialog支持三种显示形式: Text Mode, Image Mode, Text & Image Mode
-* PromptDialog提供默认五种显示形式: Success, Info, Error, Warning, Help 
-* 提供默认的进出动画, 支持自定义动画
-* PromptDialog UI来自于Dribbble的设计师 [@Diego Faria](https://dribbble.com/shots/1626595-Feedback-dialogs-collection-FREE-PSD "Title"), 再次表示感谢
+* ColorDialog support: Text Mode, Image Mode, Text & Image Mode
+* PromptDialog support: Success, Info, Error, Warning, Help
+* Support custom in/out animation
+* PromptDialog's UI from Dribbble[@Diego Faria](https://dribbble.com/shots/1626595-Feedback-dialogs-collection-FREE-PSD "Title"), Thanks.
 
+### Usage
 
+#### Gradle
+##### Step 1. Add the JitPack repository to your build file
+~~~ xml
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+~~~
 
-### 调用方式:
+##### Step 2. Add the dependency
+~~~ xml
+dependencies {
+    compile 'com.github.andyxialm:ColorDialog:1.0.0'
+}
+~~~
+
+#### Maven
+##### Step 1. Add the JitPack repository to your build file
+~~~ xml
+<repositories>
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+</repositories>
+~~~
+
+##### Step 2. Add the dependency
+~~~ xml
+<dependency>
+    <groupId>com.github.andyxialm</groupId>
+    <artifactId>ColorDialog</artifactId>
+    <version>1.0.0</version>
+</dependency>
+~~~
+
+##### Java Code:
 
 <pre><code>
 ColorDialog dialog = new ColorDialog(this);
@@ -47,7 +86,7 @@ new PromptDialog(this)
 
 
 
-### 效果图:
+### Screenshots:
 
 * PromptDialog Success
 
