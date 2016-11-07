@@ -1,7 +1,5 @@
 # OSX
-
 *.DS_Store
-
 
 # Gradle files
 build/
@@ -11,33 +9,20 @@ build/
 
 # IDEA
 *.iml
-.idea/.name
-.idea/encodings.xml
-.idea/inspectionProfiles/Project_Default.xml
-.idea/inspectionProfiles/profiles_settings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/scopes/scope_settings.xml
-.idea/vcs.xml
-.idea/workspace.xml
-.idea/libraries
-
+.idea/
 
 # Built application files
 *.apk
 *.ap_
 
-
 # Files for the Dalvik VM
 *.dex
-
 
 # Java class files
 *.class
 
 # Local configuration file (sdk path, etc)
 local.properties
-
 
 # Log Files
 *.log

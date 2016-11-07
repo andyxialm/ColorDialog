@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
 import android.widget.Toast;
+
 import cn.refactor.lib.colordialog.ColorDialog;
 import cn.refactor.lib.colordialog.PromptDialog;
 
@@ -28,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
         new PromptDialog(this)
             .setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS)
             .setAnimationEnable(true)
-            .setTitleText("Success").setContentText("Your info text goes here. Loremipsum dolor sit amet, consecteturn adipisicing elit, sed do eiusmod.")
-            .setPositiveListener("OK", new PromptDialog.OnPositiveListener() {
+            .setTitleText(getString(R.string.success))
+            .setContentText(getString(R.string.text_data))
+            .setPositiveListener(getString(R.string.ok), new PromptDialog.OnPositiveListener() {
                 @Override
                 public void onClick(PromptDialog dialog) {
                     dialog.dismiss();

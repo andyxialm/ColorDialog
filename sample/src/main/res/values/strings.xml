@@ -5,4 +5,15 @@
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
     <string name="text_iknow">I Know</string>
+    <string name="ok">OK</string>
+    <string name="success">Success</string>
+    <string name="help">Help</string>
+    <string name="info">Info</string>
+    <string name="error">Error</string>
+    <string name="warning">Warning</string>
+    <string name="text_data">Your info text goes here. Loremipsum dolor sit amet, consecteturn adipisicing elit, sed do eiusmod.</string>
+    <string name="prompt_dialog">Prompt Dialog</string>
+    <string name="pic">Pic</string>
+    <string name="text">Text</string>
+    <string name="text_and_pic">Text And Pic</string>
 </resources>
