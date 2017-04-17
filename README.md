@@ -1,4 +1,4 @@
-#ColorDialog & PromptDialog
+# ColorDialog & PromptDialog
 [![](https://jitpack.io/v/andyxialm/ColorDialog.svg)](https://jitpack.io/#andyxialm/ColorDialog)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ColorDialog-brightgreen.svg?style=flat)]()
 
@@ -122,5 +122,5 @@ new PromptDialog(this)
 ![](https://github.com/andyxialm/ColorDialog/blob/master/art/Screenshot_imgtext.png?raw=true)
 
 
-#License
+# License
 <p>ColorDialog is available under the MIT license.</p>
