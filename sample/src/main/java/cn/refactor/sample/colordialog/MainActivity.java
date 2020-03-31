@@ -25,6 +25,24 @@ public class MainActivity extends AppCompatActivity {
         showPromptDlg();
     }
 
+    public void showPromptDialogWithEditText(View view)
+    {
+        new PromptDialog(this)
+                .setDialogType(PromptDialog.DIALOG_TYPE_EDIT)
+                .setAnimationEnable(true)
+                .setTitleText("EDIT")
+                .setContentText("Sub Title")
+                .setEditTextHint("Enter Text")
+                .setPositiveListener(getString(R.string.edit), new PromptDialog.OnPositiveListener() {
+                    @Override
+                    public void onClick(PromptDialog dialog) {
+                        dialog.dismiss();
+                        Toast.makeText(MainActivity.this,dialog.getEditText().getText().toString(),Toast.LENGTH_LONG).show();
+                    }
+                }).show();
+    }
+
+
     private void showPromptDlg() {
         new PromptDialog(this)
             .setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS)
