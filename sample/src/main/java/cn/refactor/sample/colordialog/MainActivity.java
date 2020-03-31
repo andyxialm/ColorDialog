@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(PromptDialog dialog) {
                         dialog.dismiss();
+                        Toast.makeText(MainActivity.this,dialog.getEditText().getText().toString(),Toast.LENGTH_LONG).show();
                     }
                 }).show();
     }
