@@ -12,6 +12,12 @@
         android:text="@string/prompt_dialog"/>
 
     <Button
+        android:onClick="showPromptDialogWithEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/prompt_dialog_edit_text"/>
+
+    <Button
         android:onClick="showPicDialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

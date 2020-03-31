@@ -64,7 +64,23 @@
             android:paddingRight="10dp"
             android:paddingTop="5dp"
             android:textColor="@color/color_dialog_content_prompt"
-            android:visibility="visible" />
+            android:visibility="visible"
+            />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/color_dialog_content_prompt"
+            android:background="@drawable/black_border_background"
+            android:inputType="text" />
     </LinearLayout>
 
 

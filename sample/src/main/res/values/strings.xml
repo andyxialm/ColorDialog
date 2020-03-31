@@ -11,8 +11,10 @@
     <string name="info">Info</string>
     <string name="error">Error</string>
     <string name="warning">Warning</string>
+    <string name="edit">Save</string>
     <string name="text_data">Your info text goes here. Loremipsum dolor sit amet, consecteturn adipisicing elit, sed do eiusmod.</string>
     <string name="prompt_dialog">Prompt Dialog</string>
+    <string name="prompt_dialog_edit_text">Prompt Dialog with Edit Text</string>
     <string name="pic">Pic</string>
     <string name="text">Text</string>
     <string name="text_and_pic">Text And Pic</string>

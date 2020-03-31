@@ -11,11 +11,13 @@ import android.graphics.Path;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,16 +39,19 @@ public class PromptDialog extends Dialog {
     public static final int DIALOG_TYPE_WRONG   = 2;
     public static final int DIALOG_TYPE_SUCCESS = 3;
     public static final int DIALOG_TYPE_WARNING = 4;
+    public static final int DIALOG_TYPE_EDIT    = 5;
     public static final int DIALOG_TYPE_DEFAULT = DIALOG_TYPE_INFO;
 
     private AnimationSet mAnimIn, mAnimOut;
     private View mDialogView;
     private TextView mTitleTv, mContentTv, mPositiveBtn;
+
+    private EditText editText;
     private OnPositiveListener mOnPositiveListener;
 
     private int mDialogType;
-    private boolean mIsShowAnim;
-    private CharSequence mTitle, mContent, mBtnText;
+    private boolean mIsShowAnim, mIsEditTextSecure;
+    private CharSequence mTitle, mContent, mBtnText, mEditTextContent, mEditTextHint;
 
     public PromptDialog(Context context) {
         this(context, 0);
@@ -82,6 +87,7 @@ public class PromptDialog extends Dialog {
         mTitleTv = (TextView) contentView.findViewById(R.id.tvTitle);
         mContentTv = (TextView) contentView.findViewById(R.id.tvContent);
         mPositiveBtn = (TextView) contentView.findViewById(R.id.btnPositive);
+        editText = (EditText) contentView.findViewById(R.id.editText);
 
         View llBtnGroup = findViewById(R.id.llBtnGroup);
         ImageView logoIv = (ImageView) contentView.findViewById(R.id.logoIv);
@@ -109,6 +115,26 @@ public class PromptDialog extends Dialog {
         mTitleTv.setText(mTitle);
         mContentTv.setText(mContent);
         mPositiveBtn.setText(mBtnText);
+
+        configureEditText();
+    }
+
+    private void configureEditText()
+    {
+        if(mDialogType == DIALOG_TYPE_EDIT)
+        {
+            editText.setVisibility(View.VISIBLE);
+            editText.setHint(mEditTextHint);
+            editText.setText(mEditTextContent);
+            if(mIsEditTextSecure)
+            {
+                editText.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
+            }
+        }
+        else
+        {
+            editText.setVisibility(View.GONE);
+        }
     }
 
     private void resizeDialog() {
@@ -161,6 +187,9 @@ public class PromptDialog extends Dialog {
         if (DIALOG_TYPE_WARNING == mDialogType) {
             return R.mipmap.icon_warning;
         }
+        if(DIALOG_TYPE_EDIT == mDialogType) {
+            return  R.mipmap.icon_edit;
+        }
         return R.mipmap.ic_info;
     }
 
@@ -183,6 +212,10 @@ public class PromptDialog extends Dialog {
         if (DIALOG_TYPE_WARNING == mDialogType) {
             return R.color.color_type_warning;
         }
+        if(DIALOG_TYPE_EDIT == mDialogType) {
+            return  R.color.color_type_edit;
+        }
+
         return R.color.color_type_info;
     }
 
@@ -204,6 +237,9 @@ public class PromptDialog extends Dialog {
         }
         if (DIALOG_TYPE_WARNING == mDialogType) {
             return R.drawable.sel_btn_warning;
+        }
+        if(DIALOG_TYPE_EDIT == mDialogType) {
+            return  R.drawable.sel_btn_edit;
         }
         return R.drawable.sel_btn;
     }
@@ -373,6 +409,51 @@ public class PromptDialog extends Dialog {
 
     public interface OnPositiveListener {
         void onClick(PromptDialog dialog);
+    }
+
+    public EditText getEditText()
+    {
+        return  editText;
+    }
+
+    public PromptDialog setEditTextContent(CharSequence editTextContent)
+    {
+        mEditTextContent = editTextContent;
+        return this;
+    }
+
+    public PromptDialog setEditTextContent(int resId)
+    {
+        mEditTextContent = getContext().getString(resId);
+        return this;
+    }
+
+    public CharSequence getEditTextContent()
+    {
+        return mEditTextContent;
+    }
+
+    public CharSequence getEditTextHint()
+    {
+        return mEditTextHint;
+    }
+
+    public PromptDialog setEditTextHint(CharSequence editTextHint)
+    {
+        mEditTextHint = editTextHint;
+        return  this;
+    }
+
+    public PromptDialog setEditTextHint(int resId)
+    {
+        mEditTextHint = getContext().getString(resId);
+        return  this;
+    }
+
+    public PromptDialog setIsEditTextContentSecure(Boolean isSecure)
+    {
+        mIsEditTextSecure = isSecure;
+        return this;
     }
 
 }
