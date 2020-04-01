@@ -75,7 +75,7 @@
         <TextView
             android:id="@+id/btnPositive"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/sel_def_gray_left"
             android:clickable="true"
@@ -102,7 +102,7 @@
         <TextView
             android:id="@+id/btnNegative"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/sel_def_gray_right"
             android:clickable="true"
